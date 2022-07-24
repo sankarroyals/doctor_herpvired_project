@@ -1,0 +1,49 @@
+body{
+  background-color:rgb(217, 247, 245);
+}
+h2{
+  text-align: center;
+  color: rgb(5, 5, 5);
+  text-decoration: underline;
+}
+form {
+  border: 100px solid #cbf4fc;
+  background-color: aliceblue;
+  
+}
+
+/* inputs */
+input[type=email], input[type=password] {
+  width: 80%;
+  padding: 15px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid rgb(117, 236, 230);
+  box-sizing: border-box;
+}
+
+/* buttons */
+button {
+  background-color: #1ddf98;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+ 
+/* padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* "Forgot password" text */
+span.psw {
+  float: left; 
+}
