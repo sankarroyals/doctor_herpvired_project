@@ -26,6 +26,8 @@ function SearchBox() {
     return (
          <>
             <div>
+
+            
             <Form onSubmit={submitHandler} style={{display:"flex"}}>
             <Form.Control
                 type='text'
@@ -36,6 +38,7 @@ function SearchBox() {
                 className='mr-sm-2 ml-sm-5' style={{background:"white",borderRadius:"20px",border:"2px solid gray"}}
             ></Form.Control>
             </Form>
+          
          </div>
             <div>
                         <Row>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Message from '../../components/Message'
 import { Row, Col } from 'react-bootstrap'
 import All_doctor from '../doctors/All_doctor'
+import SearchBox from '../../components/common/SearchBox'
 
 
 const PHome = () => {
@@ -43,6 +44,10 @@ const PHome = () => {
   return (
    
     <div>
+          
+          <div style={{marginBottom:"10px"}}>
+          <SearchBox />
+          </div>
             
             {user ? <h1>List of all doctors</h1> : 
             
