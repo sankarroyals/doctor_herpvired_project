@@ -5,6 +5,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap'
 
 import FormContainer from '../components/FormContainer'
 import urls from '../Config'
+import { Link } from 'react-router-dom'
 
 const MyProfile = () => {
   let [user,setUser] = useState([])
@@ -103,9 +104,10 @@ const MyProfile = () => {
 
   return (
     <FormContainer>
+    <Link to={`/`} className='btn btn-light my-3' style={{fontSize:"20px",display:"inline" , left:"-120px",top:"-20px",position:"absolute"}}>⬅</Link>
     {user.role === 'doctor'?
     <h1 style={{textTransform:"capitalize",wordSpacing:"0",color:"green"  }}>Hloo Doctor {name} 🩺</h1>
-    :<h1> Edit Details </h1>}
+    :<h1> Edit Profile </h1>}
     
    
     <Form onSubmit={submitHandler}>

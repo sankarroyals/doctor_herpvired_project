@@ -49,10 +49,15 @@ function Header() {
         <header>
             <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect >
                 <Container>
-                    <LinkContainer to='/'>
-                        <Navbar.Brand>Doctors Consultancy</Navbar.Brand>
+                    <LinkContainer to='/' style={{borderRadius:"50%"}}>
+                       <img src="https://tse1.mm.bing.net/th?id=OIP.VfGo9mRMwPHX-DFFqTEZZQHaF7&pid=Api&P=0"
+                            width={50} height={50} alt=""/>
+                        
+                        
                     </LinkContainer>
-
+                    <LinkContainer to='/' style={{margin:"10px",color:"white",cursor:"pointer"}}>
+                    <h4>Doctor Consultancy</h4>
+                    </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         
@@ -81,9 +86,19 @@ function Header() {
 
                                 </NavDropdown>
                             ) : (
+                                <>
+                                   <NavDropdown title={'Register'}>
+                                   <LinkContainer to='/doctor_signup'>
+                                   <NavDropdown.Item><i className="fas fa-user"></i>Doctor_signup</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to='/patient_signup'>
+                                        <NavDropdown.Item><i className="fas fa-user"></i>Patient_signup</NavDropdown.Item>
+                                    </LinkContainer>
+                                   </NavDropdown>
                                     <LinkContainer to='/login'>
                                         <Nav.Link><i className="fas fa-user"></i>Login</Nav.Link>
                                     </LinkContainer>
+                                </>
                                 )}
 
 

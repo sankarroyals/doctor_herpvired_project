@@ -15,15 +15,23 @@ const Appointemt = () => {
   const { id } = useParams()
 
 
+
+  const navigate = useNavigate()
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('userDetails'))
     setUserinfo(data)
-
+    
 
 
   }, [])
 
-  const navigate = useNavigate()
+  
+
+
+
+
+
+
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -52,7 +60,11 @@ const Appointemt = () => {
   
   return (
 
-    <div>
+    <>
+      {!userInfo ?
+      <Navigate to='/login/' />
+      :
+      <div>
       <Link to={`/doctor/${id}`} className='btn btn-light my-3'>Go Back</Link>
       <FormContainer>
         <h1>Appointment Slot Booking</h1>
@@ -97,6 +109,11 @@ const Appointemt = () => {
 
       </FormContainer>
     </div>
+      
+      
+      
+      }
+    </>
   )
 }
 

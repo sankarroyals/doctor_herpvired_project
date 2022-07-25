@@ -49,9 +49,7 @@ const Home = () => {
   else{
     return (
 
-      <div>Please <Link to='/login'>Login</Link>/<Link to='/doctor_signup'>Signup as Doctor</Link>/
-      <Link to='/patient_signup'>Signup as Patient_</Link>
-       to continue 😊</div>
+      <><PHome /></>
     )
   }
  

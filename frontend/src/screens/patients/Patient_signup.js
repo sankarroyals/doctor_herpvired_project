@@ -6,6 +6,8 @@ import Message from '../../components/Message'
 import FormContainer from '../../components/FormContainer'
 import axios from 'axios'
 import urls from '../../Config'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 
@@ -17,6 +19,8 @@ const Patient_signup = () => {
     const [address, setAddress] = useState('')
     const [image, setImage] = useState()
     const [userInfo, setUserinfo] = useState(false)
+
+    const [next,setNext] = useState(true)
 
 
 
@@ -32,6 +36,13 @@ const Patient_signup = () => {
         setImage(e.target.files[0])
         console.log(image)
     }
+
+    const location = () =>{
+        
+    }
+
+
+
 
     const navigate= useNavigate()
     const submitHandler = async (e) => {
@@ -76,8 +87,9 @@ const Patient_signup = () => {
                     : <h1> Sign Up</h1>}
 
                 <Form onSubmit={submitHandler}>
-
-                    <Form.Group controlId='name'>
+                    {next?
+                   <>
+                   <Form.Group controlId='name'>
                         <Form.Label>Name</Form.Label>
                         <Form.Control
                             required
@@ -112,22 +124,43 @@ const Patient_signup = () => {
                         >
                         </Form.Control>
                     </Form.Group>
+                   <div className=''
+                   style={{display:"flex",flexDirection:"column",justifyContent:"end",alignItems:"end"}}
+                   >
+                   <p
+                    style={{marginTop:"20px",cursor:"pointer",width:"80px", textAlign:'center',color:"white",padding:"15px"}}
+                    className="bg-dark"
+                    onClick={()=>{
+                        setNext(false)
+                    }}
+                    >Next</p>
+                   </div>
+                   </>
 
-                    <Form.Group controlId='address'>
+                    :
+
+                   <>
+                   <Form.Group controlId='address'>
                         <Form.Label>Address</Form.Label>
                         <Form.Control
-                            required
+                           
                             type='address'
                             placeholder='Enter Your Address'
                             value={address}
                             onChange={(e) => setAddress(e.target.value)}
                         >
                         </Form.Control>
+                        
+
+                    <i class='fa-solid fa-location-dot' style={{position:"absolute",right:"20px",top:"90px",cursor:"pointer"}}
+                    
+                    onClick={location}
+                    ></i>
                     </Form.Group>
                     <Form.Group controlId='mobile'>
                         <Form.Label>Mobile</Form.Label>
                         <Form.Control
-                            required
+                            
                             type='mobile'
                             placeholder='Enter Your Mobile'
                             value={mobile}
@@ -143,11 +176,25 @@ const Patient_signup = () => {
                             onChange={handleImage}
                         >
                         </Form.Control>
-                    </Form.Group>
+                    </Form.Group> 
+                    <div className=''
+                   style={{display:"flex",justifyContent:"start",alignItems:"start"}}
+                   >
+                   <p
+                    style={{marginTop:"20px",cursor:"pointer",width:"80px", textAlign:'center',color:"white",padding:"15px"}}
+                    className="bg-dark"
+                    onClick={()=>{
+                        setNext(true)
+                    }}
+                    >Back</p>
+                    
 
-                    <Button type='submit' variant='primary'>
+                    <Button type='submit' variant='primary' style={{JustifySelf:"end",marginLeft:"350px",marginTop:"20px"}}>
                         Register
                     </Button>
+                    </div>
+                    </>
+                    }
 
                 </Form>
 

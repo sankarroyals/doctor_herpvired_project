@@ -43,8 +43,8 @@ return(
         <Route path="/login" element={<Login />} />
         <Route path="/patient_signup" element={<PSignup />} />
         <Route path="/doctor_signup" element={<DSignup />} />
-        {data?<Route path="/doctor/:id" element={<SDoctor />} />: <Route path="/" element={<Home />} /> }
-        {data? <Route path="/doctor/:id/appointment/" element={<Appointemt />} /> : <Route path="/" element={<Home />} /> }
+        <Route path="/doctor/:id" element={<SDoctor />} /> 
+        <Route path="/doctor/:id/appointment/" element={<Appointemt />} /> 
         {data? <Route path="/yourappointments/:email" element={<AppointmentList />} /> : <Route path="/" element={<Home />} /> }
         {data? <Route path="/message/:email/:id/" element={<SendMessage />} /> : <Route path="/" element={<Home />} /> }
         {data? <Route path="/profile/:email/" element={<MyProfile />} /> : <Route path="/" element={<Home />} /> }

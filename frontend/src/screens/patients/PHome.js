@@ -9,7 +9,18 @@ import All_doctor from '../doctors/All_doctor'
 const PHome = () => {
     const [data,setData] = useState([])
     const [error,setError] = useState('')
+    const [user,setUser] = useState(false)
     const path = '../../../../doctorPatient/media/images/'
+
+    useEffect(()=>{
+      if(localStorage.getItem('userDetails')){
+        setUser(true)
+      }
+    },[])
+
+
+
+
     useEffect( ()=>{
          try{
           axios.get('/api/doctors/').then((res)=>{
@@ -33,8 +44,13 @@ const PHome = () => {
    
     <div>
             
-
-            <h1>List of all doctors</h1>
+            {user ? <h1>List of all doctors</h1> : 
+            
+            <h1>Welcome...!</h1>
+            
+            
+            }
+            
             {
                 error ? <Message variant='danger'>{error}</Message>
                   :
