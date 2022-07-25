@@ -40,7 +40,7 @@ function Header() {
                 setUserinfo('')
                 setSuperuser(false)
                 
-                navigate('/')
+                navigate('/login')
                 
      
         
