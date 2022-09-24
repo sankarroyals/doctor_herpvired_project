@@ -55,6 +55,9 @@ class User(AbstractUser):
             return  " "+"("+" "+ self.role + " " +")" +" "+self.email +" "+"------->"+" "+self.first_name
         
 
+
+
+
 # appointment model   
 class AppointMent(models.Model):
     patient_name=models.CharField(max_length=50)
